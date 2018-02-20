@@ -1,0 +1,18 @@
+.types{
+    padding: 20px 0;
+    text-align: center;
+    font-size: .80rem;
+    text-align: center;
+    line-height: 2em;
+}
+.types-item{
+    box-sizing: border-box;
+    border-radius: .1rem;
+    color: white;
+}
+.types-seven-star{
+    background-color: orangered;
+}
+.types-double-chromosphere{
+    background-color: orange;
+}
