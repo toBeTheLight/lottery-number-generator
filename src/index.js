@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick'
 import registerServiceWorker from './registerServiceWorker';
-import './assets/css/common.css'
+import './assets/css/common.less'
 import './assets/js/rem'
 
 import { App } from './views'

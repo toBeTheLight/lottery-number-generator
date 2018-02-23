@@ -1,0 +1,10 @@
+.sevenstar-container{
+    background-color: white;
+}
+.sevenstar-container .number-item{
+    display: inline-block;
+    width: 1rem;
+}
+.number-items{
+    padding-top: 40px;
+}

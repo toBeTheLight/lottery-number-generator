@@ -1,0 +1,16 @@
+.doublechromosphere-container{
+    background-color: white;
+}
+.doublechromosphere-container .number-item{
+    display: inline-block;
+    width: 1rem;
+}
+.doublechromosphere-items{
+    padding-top: 40px;
+}
+.doublechromosphere-container .number-item:nth-child(-n+6) input[type=text]{
+    color: red;
+}
+.doublechromosphere-container .number-item:nth-child(7) input[type=text]{
+    color: blue;
+}

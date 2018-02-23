@@ -94,6 +94,9 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.6.5"
-  }
+    "babel-plugin-import": "^1.6.5",
+    "less": "^3.0.1",
+    "less-loader": "^4.0.5"
+  },
+  "homepage": "."
 }

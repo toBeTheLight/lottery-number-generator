@@ -1,0 +1,81 @@
+@import './base.css';
+@import './rewrite.less';
+html,body{
+    background-color: #fff;
+}
+// 号码部分
+.part-num{
+    padding: 10px;
+    outline: #ddd 1px solid;
+}
+.number-items{
+    text-align: center;
+}
+.number-item input[type="number"],
+.number-item input[type="text"]{
+    width: 100%;
+    height: 1rem;
+    outline: 1px solid #ddd;
+    text-align: center;
+    font-size: .5rem;
+    border: none;
+    padding: 0;
+    margin: 0 0 2px 0;
+    line-height: 1rem;
+}
+.btns-func{
+    text-align: center;
+}
+.btn-clear,
+.btn-save,
+.btn-make{
+    font-weight: 600;
+    font-size: .4rem;
+    line-height: 2em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 5px;
+    padding: 0 10px;
+    box-shadow: 2px 2px 1px 1px rgba(55,55,55,.6);
+    &:active{
+        box-shadow: none;
+    }
+}
+.btn-clear{
+    background-color: orangered;
+}
+.btn-save{
+    background-color: yellowgreen;
+}
+.btn-make{
+    background-color: skyblue;
+}
+// 存储部分
+.part-cache{
+    // background-color: #F0EEEE;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 10px 0;
+    font-size: .4rem;
+    h4{
+        font-weight: 600;
+    }
+    li{
+        margin: 5px 0;
+        span{
+            border-radius: 2px;
+            padding: 5px;
+            background-color: #ddd;
+        }
+    }
+    button{
+        border-radius: 2px;
+        padding: 5px;
+        border: none;
+        background-color: #E94A4A;
+        color: white;
+        margin-left: 10px;
+    }
+}
