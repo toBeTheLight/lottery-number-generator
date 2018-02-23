@@ -38,7 +38,7 @@ export default class Index extends Component {
         }
       }
       let tempValue = this.state.value
-      tempValue[index] = inputValue
+      tempValue[index] = Number(inputValue)
       this.setState({
         value: tempValue
       })
@@ -60,14 +60,25 @@ export default class Index extends Component {
     })
   }
   make () {
-    var tempValue = this.state.value
+    let tempValue = this.state.value
     let length = this.state.length
+    let haveArr = []
+    for(let i = 0; i < length; i++) {
+      if (this.state.lock[i] === true && i !== 6 ) {
+        haveArr.push(Number(this.state.value[i]))
+      }
+    }
     for(let i = 0; i < length; i++) {
       if (this.state.lock[i] !== true) {
         if (i === 6) {
           tempValue.splice(i, 1, randomNum('1-16'))          
         } else {
-          tempValue.splice(i, 1, randomNum('1-33'))
+          let tempNum = randomNum('1-33')
+          while(haveArr.indexOf(tempNum) >= 0) {
+            tempNum = randomNum('1-33')
+          }
+          haveArr.push(tempNum)
+          tempValue.splice(i, 1, tempNum)
         }
       }
     }
@@ -82,6 +93,19 @@ export default class Index extends Component {
       return el !== ''
     })) {
       alert('当前号码不合格')
+      return
+    }
+    let i = 0, tempObj = {}, flag = false
+    for (; i < this.state.value.length - 1; i++) {
+      if (tempObj[this.state.value[i]]) {
+        flag = true
+        break
+      } else {
+        tempObj[this.state.value[i]] = true
+      }
+    }
+    if (flag) {
+      alert('当前号码有重复')
       return
     }
     let tempString = tempValue.join(' ')
