@@ -7,6 +7,28 @@ if (typeof Promise === 'undefined') {
   require('promise/lib/rejection-tracking').enable();
   window.Promise = require('promise/lib/es6-extensions.js');
 }
+if (typeof localStorage === 'undefined') {
+  //browserMocks.js
+  var localStorageMock = (function() {
+    var store = {};
+    return {
+        getItem: function(key) {
+            return store[key] || null;
+        },
+        setItem: function(key, value) {
+            store[key] = value.toString();
+        },
+        clear: function() {
+            store = {};
+        }
+    };
+
+  })();
+
+  Object.defineProperty(window, 'localStorage', {
+    value: localStorageMock
+  });
+}
 
 // fetch() polyfill for making API calls.
 require('whatwg-fetch');
@@ -20,3 +42,14 @@ Object.assign = require('object-assign');
 if (process.env.NODE_ENV === 'test') {
   require('raf').polyfill(global);
 }
+
+const Enzyme = require('enzyme');
+
+let Adapter;
+if (process.env.REACT === '15') {
+  Adapter = require('enzyme-adapter-react-15');
+} else {
+  Adapter = require('enzyme-adapter-react-16');
+}
+
+Enzyme.configure({ adapter: new Adapter() });

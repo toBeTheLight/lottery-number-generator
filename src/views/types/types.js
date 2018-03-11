@@ -8,11 +8,11 @@ export default class Index extends Component {
     return (
       <WingBlank className="types">
         <Link to="/types/seven-star">
-        <div className="types-item types-seven-star">体彩七星彩</div>
+          <div className="types-item types-seven-star">体彩七星彩</div>
         </Link>
         <WhiteSpace />
         <Link to="/types/double-chromosphere">
-        <div className="types-item types-double-chromosphere">福彩双色球</div>
+          <div className="types-item types-double-chromosphere">福彩双色球</div>
         </Link>
         <WhiteSpace />        
       </WingBlank>

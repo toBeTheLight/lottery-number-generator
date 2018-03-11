@@ -77,7 +77,7 @@ export default class Index extends Component {
     this.setState({
       cache: tempCache
     })
-    localStorage.setItem(this.state.typeName, JSON.stringify(tempCache))
+    window.localStorage.setItem(this.state.typeName, JSON.stringify(tempCache))
   }
   deleteCache (index) {
     console.log(index)
@@ -86,10 +86,10 @@ export default class Index extends Component {
     this.setState({
       cache: tempCache
     })
-    localStorage.setItem(this.state.typeName, JSON.stringify(tempCache))  
+    window.localStorage.setItem(this.state.typeName, JSON.stringify(tempCache))  
   }
   componentWillMount () {
-    let tempCache = JSON.parse(localStorage.getItem(this.state.typeName)) || []
+    let tempCache = JSON.parse(window.localStorage.getItem(this.state.typeName)) || []
     this.setState({
       cache: tempCache
     })  
